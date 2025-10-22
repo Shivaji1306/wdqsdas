@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurum Coffee House — Our Story & Roastery</title>
+  <meta name="description" content="An editorial look into our roastery, farmers, and tasting notes. Traceable sourcing, small-batch craft, and team profiles." />
+  <meta name="theme-color" content="#35241F" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Aurum Coffee House — Our Roastery" />
+  <meta property="og:description" content="We roast with craft, care, and traceable relationships — read our roastery story." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1611741580533-e20ce24c4dc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxyb2FzdGVyeSUyMGhlcm8lMjAlMjh3aWRlJTIwZWRpdG9yaWFsJTIwc2hvdCUyOXxlbnwwfDB8fHwxNzYxMTQ2Nzg1fDA&ixlib=rb-4.1.0&q=80&w=1080" />
+  <meta property="og:url" content="https://www.aurumcoffee.example/about.html" />
+
+  <!-- Structured Data: Organization + Roastery -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CafeOrCoffeeShop",
+    "name":"Aurum Coffee House",
+    "url":"https://www.aurumcoffee.example/about.html",
+    "sameAs":["https://www.instagram.com/aurumcoffee","https://www.facebook.com/aurumcoffee"]
+  }
+  </script>
+
+  <!-- Tailwind CDN + config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#35241F' },
+            secondary: { DEFAULT: '#F6EBDD' },
+            accent: { DEFAULT: '#FF7A18' }
+          },
+          fontFamily: {
+            display: ['Playfair Display','serif'],
+            heading: ['Poppins','system-ui','sans-serif'],
+            body: ['Inter','system-ui','sans-serif']
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'fade-in': 'fadeIn 0.6s ease-out',
+            'gradient-shift': 'gradientShift 3s ease infinite'
+          },
+          keyframes: {
+            fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            gradientShift: { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;color:#171717;background:#fff}
+    section{scroll-margin-top:96px}
+    *:focus-visible{outline:3px solid rgba(53,36,31,0.12);outline-offset:3px;border-radius:4px}
+    .glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px)}
+    .fade-in-section{opacity:0;transform:translateY(20px);transition:opacity .8s ease-out,transform .8s ease-out}
+    .fade-in-section.is-visible{opacity:1;transform:translateY(0)}
+    .hero-headline{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2rem,5vw + 1rem,3.5rem)}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body class="antialiased bg-white text-neutral-900">
+  <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-white text-neutral-900 px-2 py-1 rounded" href="#content">Skip to content</a>
+
+  <!-- NAVIGATION (reused pattern) -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300" aria-label="Primary navigation">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between gap-4">
+      <a href="/" class="font-display font-extrabold text-2xl tracking-tight text-white md:text-white" aria-label="Aurum home">AURUM</a>
+
+      <div class="hidden md:flex items-center gap-6" role="menubar">
+        <a href="/" class="menu-item text-white font-medium hover:text-accent transition-colors">Home</a>
+        <a href="/menu.html" class="menu-item text-white font-medium hover:text-accent transition-colors">Menu</a>
+        <a href="/shop.html" class="menu-item text-white font-medium hover:text-accent transition-colors">Shop</a>
+        <a href="/subscriptions.html" class="menu-item text-white font-medium hover:text-accent transition-colors">Subscriptions</a>
+        <a href="/about.html" class="menu-item text-white font-medium hover:text-accent transition-colors">Our Roastery</a>
+        <a href="/locations.html" class="menu-item text-white font-medium hover:text-accent transition-colors">Locations</a>
+        <a href="/contact.html" class="menu-item text-white font-medium hover:text-accent transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/menu.html?mode=preorder" class="ml-4 inline-flex items-center bg-gradient-to-r from-accent to-primary text-white px-4 py-2 rounded-full font-semibold shadow-[0_10px_30px_rgba(255,122,24,0.12)] hover:scale-105 transition-transform duration-300">Order</a>
+
+        <button id="mobile-menu-button" class="md:hidden w-10 h-10 inline-flex items-center justify-center rounded-md text-white" aria-label="Open menu"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer (same pattern) -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden z-40"></div>
+  <aside id="mobile-menu" class="fixed inset-y-0 right-0 w-[min(360px,80vw)] bg-white shadow-2xl transform translate-x-full transition-transform duration-300 md:hidden z-50" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <div class="p-6 space-y-6">
+      <div class="flex items-center justify-between">
+        <a href="/" class="font-display font-extrabold text-xl">AURUM</a>
+        <button id="mobile-menu-close" aria-label="Close menu" class="text-neutral-600"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <nav class="space-y-3">
+        <a href="/" class="block text-neutral-900 py-2 rounded-md hover:bg-neutral-50">Home</a>
+        <a href="/menu.html" class="block text-neutral-900 py-2 rounded-md hover:bg-neutral-50">Menu</a>
+        <a href="/shop.html" class="block text-neutral-900 py-2 rounded-md hover:bg-neutral-50">Shop</a>
+        <a href="/subscriptions.html" class="block text-neutral-900 py-2 rounded-md hover:bg-neutral-50">Subscriptions</a>
+        <a href="/about.html" class="block text-neutral-900 py-2 rounded-md hover:bg-neutral-50">Our Roastery</a>
+        <a href="/locations.html" class="block text-neutral-900 py-2 rounded-md hover:bg-neutral-50">Locations</a>
+      </nav>
+    </div>
+  </aside>
+
+  <main id="content" class="mt-16">
+
+    <!-- HERO ABOUT -->
+    <header class="relative bg-primary py-20 text-white">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="hero-headline">We roast with craft, care, and traceable relationships</h1>
+        <p class="text-white/90 mt-3">An editorial look into our roastery, farmers, and tasting notes.</p>
+      </div>
+    </header>
+
+    <!-- ROASTERY STORY -->
+    <section id="roastery_story" class="py-16 bg-white fade-in-section" aria-label="Roastery story">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="font-display text-3xl text-primary mb-4">Our Roastery</h2>
+          <div class="prose max-w-none text-neutral-700">
+            <p>At Aurum we believe a great cup begins long before the roast. We partner with farmers who tend small lots, document the lot provenance, and share tasting insights in every bag. Our roastery is purpose-built for small-batch precision — we roast in measured lots, track roast profiles, and prioritize freshness.</p>
+            <h3>Traceable sourcing</h3>
+            <p>We visit origin farms, record farmer stories, and display that information on our bags. Transparency helps you taste terroir — and helps farmers receive fair pay.</p>
+            <h3>Sustainability & craft</h3>
+            <p>From compostable packaging to energy-efficient roasters, we choose processes that protect flavor and reduce impact. Our team runs cuppings weekly so every roast meets our tasting standards.</p>
+            <blockquote>"Roast date and farm on each bag — that's how you build trust." — Head Roaster</blockquote>
+          </div>
+        </div>
+
+        <aside class="grid grid-cols-1 gap-4">
+          <img src="https://pixabay.com/get/g7c91d1e0bb4b78eece474ecc87f6105ee42d2b6211f37fbcf5dcbd77c3085b04a1faa76a1b7ea770a454f733632ef3edc23810a8cc9035940e015f36257d1c32_640.jpg" alt="Roastery interior with roaster" class="rounded-xl h-48 w-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1731186941709-f4b7f7ed26db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxyb2FzdGluZyUyMGhhbmRzJTIwY2xvc2UtdXB8ZW58MHwwfHx8MTc2MTE0Njc4N3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Hands adjusting roast drum" class="rounded-xl h-48 w-full object-cover" />
+        </aside>
+      </div>
+    </section>
+
+    <!-- TEAM & FARMERS -->
+    <section id="team_and_farmers" class="py-12 bg-neutral-50 fade-in-section" aria-label="Team and farmer profiles">
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="font-display text-2xl text-primary mb-6">Team & Farmers</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <article class="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm" aria-label="Profile card">
+            <img src="https://images.pexels.com/photos/34373714/pexels-photo-34373714.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Head roaster portrait" class="w-28 h-28 rounded-full object-cover" />
+            <div class="font-semibold text-neutral-900 mt-3">Maya R.</div>
+            <div class="text-sm text-neutral-600">Head Roaster</div>
+            <p class="text-sm text-neutral-700 italic mt-2">"We roast for sweet clarity and balanced acidity."</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm" aria-label="Profile card">
+            <img src="https://images.pexels.com/photos/34374682/pexels-photo-34374682.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Farmer portrait" class="w-28 h-28 rounded-full object-cover" />
+            <div class="font-semibold text-neutral-900 mt-3">Rafael</div>
+            <div class="text-sm text-neutral-600">Producer — Andes</div>
+            <p class="text-sm text-neutral-700 italic mt-2">"We harvest selectively to highlight citrus notes."</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm" aria-label="Profile card">
+            <img src="https://images.unsplash.com/photo-1700503819014-60a36ddd10f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxmYXJtZXIlMjAyfGVufDB8MHx8fDE3NjExNDY3OTN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Farmer portrait" class="w-28 h-28 rounded-full object-cover" />
+            <div class="font-semibold text-neutral-900 mt-3">Amina</div>
+            <div class="text-sm text-neutral-600">Producer — Rift Valley</div>
+            <p class="text-sm text-neutral-700 italic mt-2">"Our lot is known for sugar-candy sweetness."</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ROAST PROFILES -->
+    <section id="roast_profiles" class="py-12 bg-white fade-in-section" aria-label="Roast profiles and awards">
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="font-display text-2xl text-primary mb-6">Roast Profiles</h3>
+        <div class="space-y-6">
+
+          <article class="bg-secondary/60 rounded-2xl p-6 border border-neutral-100 flex flex-col md:flex-row gap-4 items-center">
+            <img src="https://images.unsplash.com/photo-1733133113826-8b0b112f64d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHxyb2FzdCUyMHByb2ZpbGUlMjAlRTIlODAlOTQlMjBjaXRydXN8ZW58MHwwfHx8MTc2MTE0Njc5Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Citrus single-origin bag" class="w-36 h-36 rounded-lg object-cover" />
+            <div class="flex-1">
+              <div class="text-lg font-semibold">Ethiopia — Bright Citrus</div>
+              <div class="text-neutral-700 text-sm mt-2">Tasting notes: lime, jasmine, honeysuckle. Roast date: {{roast_date}}</div>
+              <div class="flex gap-3 text-xs text-neutral-500 mt-3"><span>250kg</span><span>Farm: Yireh</span></div>
+            </div>
+            <a href="/shop.html" class="mt-3 md:mt-0 md:ml-auto inline-flex bg-accent text-white px-4 py-2 rounded-full">Shop this roast</a>
+          </article>
+
+          <article class="bg-secondary/60 rounded-2xl p-6 border border-neutral-100 flex flex-col md:flex-row gap-4 items-center">
+            <img src="https://images.pexels.com/photos/8356298/pexels-photo-8356298.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Chocolate single-origin bag" class="w-36 h-36 rounded-lg object-cover" />
+            <div class="flex-1">
+              <div class="text-lg font-semibold">Colombia — Milk Chocolate</div>
+              <div class="text-neutral-700 text-sm mt-2">Tasting notes: cocoa, caramel, almond. Roast date: {{roast_date}}</div>
+              <div class="flex gap-3 text-xs text-neutral-500 mt-3"><span>120kg</span><span>Farm: Hacienda Azul</span></div>
+            </div>
+            <a href="/shop.html" class="mt-3 md:mt-0 md:ml-auto inline-flex bg-accent text-white px-4 py-2 rounded-full">Shop this roast</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (reused) -->
+  <footer id="site-footer" class="bg-neutral-900 text-secondary py-12" aria-label="Site footer">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="font-display text-lg text-white">Aurum Coffee House</div>
+        <p class="text-sm text-neutral-400 mt-2">Small-batch roastery — craft coffee with transparent sourcing.</p>
+      </div>
+
+      <div>
+        <div class="text-white font-semibold mb-3">Links</div>
+        <ul class="space-y-2 text-sm text-neutral-400">
+          <li><a href="/menu.html" class="hover:text-white">Menu</a></li>
+          <li><a href="/shop.html" class="hover:text-white">Shop</a></li>
+          <li><a href="/subscriptions.html" class="hover:text-white">Subscriptions</a></li>
+          <li><a href="/locations.html" class="hover:text-white">Locations</a></li>
+          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-white font-semibold mb-3">Newsletter</div>
+        <form class="relative" onsubmit="event.preventDefault(); subscribeNewsletter();">
+          <label for="newsletter-email-about" class="sr-only">Email address</label>
+          <input id="newsletter-email-about" type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-md bg-neutral-800 border border-neutral-700 text-white" aria-label="Subscribe email" required />
+          <button type="submit" class="mt-3 w-full inline-flex items-center justify-center bg-accent text-white px-4 py-3 rounded-md">Subscribe</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="text-white font-semibold mb-3">Social & Legal</div>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-accent transition-colors" aria-label="Visit our Instagram">IG</a>
+          <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-accent transition-colors" aria-label="Visit our Facebook">FB</a>
+        </div>
+        <p class="text-xs text-neutral-500 mt-4">Roast date policy, shipping & returns, accessibility</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARIA live for forms & actions -->
+  <div id="aria-live-region" aria-live="polite" class="sr-only" role="status"></div>
+
+  <script>
+    // Intersection Observer (same as index)
+    const observerOptions = { threshold: 0.08, rootMargin: '0px 0px -8% 0px' };
+    const io = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }); }, observerOptions);
+    document.querySelectorAll('.fade-in-section').forEach(el => io.observe(el));
+
+    // Mobile menu interactions
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileClose = document.getElementById('mobile-menu-close');
+
+    function openMobileMenu(){ mobileMenu.classList.remove('translate-x-full'); mobileOverlay.classList.remove('opacity-0','pointer-events-none'); mobileOverlay.classList.add('opacity-100'); }
+    function closeMobileMenu(){ mobileMenu.classList.add('translate-x-full'); mobileOverlay.classList.add('opacity-0','pointer-events-none'); mobileOverlay.classList.remove('opacity-100'); }
+    mobileMenuButton?.addEventListener('click', () => { if (mobileMenu.classList.contains('translate-x-full')) openMobileMenu(); else closeMobileMenu(); });
+    mobileClose?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
+    function subscribeNewsletter(){ const input = document.getElementById('newsletter-email-about') || document.getElementById('newsletter-email'); const email = input?.value || ''; const aria = document.getElementById('aria-live-region'); if(!email){ aria.textContent='Please enter an email address.'; return; } aria.textContent='Thanks — you are subscribed.'; const success = document.createElement('div'); success.className='fixed bottom-6 left-6 bg-white text-neutral-900 px-4 py-3 rounded-md shadow-lg'; success.textContent='Subscription confirmed.'; document.body.appendChild(success); setTimeout(()=>success.remove(),3000); }
+  </script>
+</body>
+</html>
